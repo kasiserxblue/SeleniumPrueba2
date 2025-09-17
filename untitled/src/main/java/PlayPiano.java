@@ -74,7 +74,10 @@ public class PlayPiano {
         }
     }
 
-    //Escenario 3: ♫ si, si, do, re, re, do, si, la, sol, sol, la, si, la, sol, sol, la, si, sol, la, si, do, si sol, la, si, do, si, sol, sol, fa, re + Escenario 1 ♪
+    /**Escenario 3: ♫ si, si, do, re, re, do, si, la, sol, sol, la, si, la, sol, sol, la, si, sol, la, si, do, si sol,
+      la, si, do, si, sol, sol, fa, re + Escenario 1 ♪
+     */
+
     @Test
     @Order(3)
     public void PlaSc3(){
@@ -100,12 +103,14 @@ public class PlayPiano {
         int tempo = 0;
         for(int i=0; i<scParam.length; ++i ){
 
+            /** EStoy usando cssSelector porque aunque el teclado tiene si propio ID, cada una de las teclas no asi que
+             * utilizo el atrobuto de date-key */
+
                 WebElement tecla = driver.findElement(By.cssSelector("span.white-key[data-key=\""+scParam[i]+"\"]"));
-                //WebElement keyElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("span.white-key[data-key=\""+scParam[i]+"\"]")));
                 tecla.click();
                 System.out.println("Nota: " + scParam[i]);
                 if(i>0)
-                    tempo = (scParam[i]==scParam[i-1])?500:1000;
+                    tempo = (scParam[i]==scParam[i-1])?500:1000; //condición es solo para acelerar el tempo en telcas
                 browser.sleep_wait(tempo);
 
         }
