@@ -36,7 +36,7 @@ public class PlayPiano {
     // SeUp se encarga de cargar el webDriver
     @BeforeEach
     public void setUp() {
-        param = 1; // este parametro es para el Navegador que vamos a utilizas (1)google chrome/ (2)Edge
+        param = 2; // este parametro es para el Navegador que vamos a utilizas (1)google chrome/ (2)Edge
         browser = new WebDrivers(param);
         driver = browser.getBrowserDriver();
     }
