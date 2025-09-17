@@ -95,8 +95,6 @@ public class PlayPiano {
     public void justPlay(int[] scParam){
 
         try{
-
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         int tempo = 0;
